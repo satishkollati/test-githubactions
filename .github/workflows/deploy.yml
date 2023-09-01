@@ -19,11 +19,12 @@ jobs:
 
             - name: pacakge the code
               run: mvn clean install -DskipTests
+
             - name: upload artifacts
               uses: actions/upload-artifact@v3
               with:
                name: my-artifact
-               path: **/target/*.war
+               path: ~/**/target/*.war
                   
      test:
         needs: build
