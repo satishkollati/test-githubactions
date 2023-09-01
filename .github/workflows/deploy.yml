@@ -22,9 +22,17 @@ jobs:
      test:
         needs: build
         runs-on: ubuntu-latest
-        steps:        
-            - name: test the code  
-              run: mvn test
+        steps:  
+         - name: checkout
+           uses: actions/checkout@v3
+
+         - name: download dependency    
+           uses: actions/setup-java@v3
+           with:
+             distribution: 'temurin' 
+             java-version: '17'     
+         - name: test the code  
+           run: mvn test
 
 
                   
