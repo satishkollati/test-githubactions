@@ -22,7 +22,7 @@ jobs:
      test:
         needs: build
         runs-on: ubuntu-latest
-         steps:        
+        steps:        
             - name: test the code  
               run: mvn test
 
